@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo"> My Portfolio</h1>
+        <nav>
+    
+            <nav>
+    
+                <ul>
+
+                    <li><a href="home.html">Home</a></li>
+    
+                    <li><a href="#about-me">About Me</a></li>
+    
+                    <li><a href="#skills">Skills</a></li>
+    
+                    <li><a href="#projects">Projects</a></li>
+    
+                    <li><a href="#contact">Contact</a></li>
+    
+                </ul>
+    
+            </nav>
+    </header>
+
+    <main>
+        <section id="about-me">
+            <img src="IMG_4789.jpeg" alt="Profile Picture">
+            <div>
+                <h2>About Me</h2>
+                <p>I am a dancer, and I truly love to dance—it is my passion. I also enjoy playing volleyball, as this sport makes me feel energetic and happy. I am a friendly and cheerful person, always spreading positivity to everyone around me. My favorite fruit is watermelon because it is refreshing and delicious. I also love oversized shirts and baggy pants; they are my favorite items in my wardrobe. My top four favorite colors are black, white, green, and blue. One thing I always carry with me and can’t leave the house without is my watch. My watch is very special to me, and it’s always with me wherever I go.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>• Leadership</li>
+                <li>• Teamwork</li>
+                <li>• Collaboration</li>
+            </ul>
+            <button id="add-skill-btn">Add Skill</button>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <button id="show-project-btn">Show Projects</button>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <button id="show-contact-btn">Show Contact Info</button>
+            <p id="contact-display" style="display:none;">☎ 0922-112-2334<br>✉ jenefajoy@gmail.com</p>
+        </section>
+    </main>
+
+    <script>
+        // Add skill button logic
+        document.getElementById("add-skill-btn").addEventListener("click", () => {
+            const skillValue = prompt("Enter a new skill:");
+
+            if (skillValue) {
+                const skillsList = document.querySelector("#skills ul");
+                const newSkill = document.createElement("li");
+                newSkill.textContent = `• ${skillValue}`;
+                skillsList.appendChild(newSkill);
+            }
+        });
+
+        // Show project button logic
+        document.getElementById("show-project-btn").addEventListener("click", () => {
+            alert("Mass Connect");
+            const img = document.createElement("img");
+            img.className = "project-img"
+            img.src = "IMG-PIC.png";
+            img.alt = "Mass Connect Project";
+            img.style.width = "300px";
+            img.style.marginTop = "1rem";
+            img.style.left = "0"
+
+            const projectSection = document.getElementById("projects");
+            projectSection.appendChild(img);
+        });
+
+        // Show contact information logic
+        document.getElementById("show-contact-btn").addEventListener("click", () => {
+            const contactDisplay = document.getElementById("contact-display");
+            contactDisplay.style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
